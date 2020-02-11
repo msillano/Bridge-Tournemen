@@ -36,8 +36,8 @@ SW:
 2) phpMyAdmin: (can be installed via FTP) check login username and password.
 3) Using phpMyAdmin create the 'bridge' DB by importing the bridge.sql file
 4) Unzip bridge.zip and copy dir and files to www / bridge /    (or as requested by the server).
-    WIFI URL: http: // <IP-WebServer> [: <local_port>] / bridge (web port default 80)
-    Internet URL: http: // <noip_domain> [: <AT_Nat_port>] / bridge
+    WIFI URL: http: // <IP-WebServer> [: <local_port>] / bridge    (web port default 80)
+    Internet URL: http: // <noip_domain> [: <Nat_port>] / bridge
 
  Configuration:
 5) Access DB - 2 options: common_mysql.php (obsolete) and common_pdo.php
@@ -48,9 +48,10 @@ SW:
 7) messages - 2 options: stringIT.php, stingEN.php
        => copy the desired language into 'string_use.php'.
        note: it is easy to create stringXX.php files for other languages.
-   Help: only in Italian :( (a translation can be done by the browser).
+   Help: HTML, only in Italian :( (a translation can be done by the browser).
 
  Shinystat:
-8) all pages also contain the code requested by Shinystat (commented).
-   If you wish to have access statistics, subscribe to https://www.shinystat.com (free)
-   Change the USER value and remove the comments from the code at the foot of the page.
+8) all pages also contain the code required by Shinystat (commented).
+   If you wish to have access statistics: 
+     1) subscribe to https://www.shinystat.com (free)
+     2) Change the USER value and remove the comments from the code at the foot of the page.
