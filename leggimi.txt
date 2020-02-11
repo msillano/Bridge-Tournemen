@@ -1,0 +1,57 @@
+'Tornei GioBridge': Installazione
+
+Configurazioni:
+- I giocatori utilizzano i loro smartphone (PC, tablet) per accedere e vedere i risultati
+    (modo guest).
+- Per programmare le partite, segnare i punti, etc. occorre una password (modo user).
+  accesso Locale: via open WiFi (web-server on nelle ore d'uso)
+  accesso globale via Internet: usare un router ed un servizio free di dynamic DNS, 
+     ad esempio: https://www.noip.com/
+     nota: Io ho in LAN sia il PC (windows) di sviluppo che il web-server (top-box).
+     Configurando un NAT del router ho l'accesso globale al web-server alla porta 8880, 
+     con un dominio fornito da noip. (web-server on 24/7).
+ 
+ Precondizioni:
+HW:
+ - web-server: Linux, Win, Android...
+   La soluzione più economica: un TV Top-box Android dedicato con schermo e tastiera USB 
+   solo in fase di installazione.
+   Io uso "MXQ 4K*2K 1080P Smart TV BOX XBMC/Kodi H.265 Android 4.4.2 Quad Core WiFi 8GB Mini PC"
+   (29.78 €). Consumo AC: 20 W.
+ - In LAN (anche WiFi) con un PC/portatile di sviluppo. Accesso ad Internet e Router richiesti
+   solo per: accesso globale, invio di email con i risultati, Shinystat.
+
+SW:
+- Apache + php + Mysql ( WAMP, LAMP , Palapa etc. free), php ver. 5.5 +
+- PhpMyAdmin (installare una versione compatibile se non presente, free) 
+- Utile FTP-server (se il web-server è dedicato, come nel caso di top-box, free)
+- Per inviare le mail, può essere necessario installare 'sendmail' (linux, windows, andoid) free.
+        nota: 'sendmail' è incluso nel server Android che uso
+        ('Bit Web Server' by Andi UnpamTools, purtroppo non più aggiornato)
+        Usare 'phpinfo' per avere informazioni sulla configurazione php installata.
+
+=======================
+ Installazione:
+1) verificare corretto funzionamnto del server FTP (opzionale) per esempio con il client 'winSCP.exe' (free)
+  Le operazioni successive possono essere tutte fatte comodamente via FTP + winSCP. 
+2) phpMyAdmin: (può essere installato via FTP) controllare username e password di accesso. 
+3) Usando phpMyAdmin creare il DB 'bridge' importando il file bridge01.sql
+4) Unzip bridge.zip e copiare dir e file nella dir www/bridge/ (o come richiesto dal server).
+    URL WIFI: http://<IP-WebServer>[:<porta_locale>]/bridge    (porta web default 80)
+    URL Internet: http://<dominio_noip>[:<porta_NATtraslata>]/bridge
+
+ Configurazione:
+5) DB accesso - 2 opzioni: common_mysql.php (obsoleto) e common_pdo.php 
+       => copiare in 'common_use.php' la  soluzione scelta.
+6) Editare: 'common_use.php' ove indicato per username, password etc.
+
+ Internazionalizzazione:
+7) messaggi - 2 opzioni: stringIT.php, stingEN.php 
+       =>  copiare in 'string_use.php' la lingua desiderata.
+       nota: è semplice creare file stringXX.php per altre lingue.
+   Help: solo in Italiano :(  (una traduzione può essere chiesta al browser).
+
+ Shinystat:
+8) tutte le pagine contengono anche il codice richiesto da Shinystat (commentato).
+   Se desiderate avere statistiche di accesso, iscrivetevi a https://www.shinystat.com (free)
+   Modificare il valore USER e togliere i commenti al codice a piè di pagina.
