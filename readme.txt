@@ -4,8 +4,8 @@ Configurations:
 - Players use their smartphones (PCs, tablets) to log in and see the results (guest mode).
 - To program matches, score points, etc. a password is required (user mode).
 
-  Local access: via open WiFi (web-server on during use hours)
-  global access via the Internet: use a router and a free dynamic DNS service,
+- Local access: via open WiFi (web-server on during use hours)
+- Global access via the Internet: use a router and a free dynamic DNS service,
      for example: https://www.noip.com/
      note: I have both the development PC (windows) and the web-server (top-box) in LAN.
      By configuring a router NAT I have global access to the web-server at port 8880,
@@ -23,10 +23,10 @@ HW:
 SW:
 - Apache + php + Mysql (WAMP, LAMP, Palapa etc. free), php ver. 5.5 +
 - PhpMyAdmin (install a compatible version if not present, free)
-- Useful FTP-server (if the web-server is dedicated, as in the case of top-box, free)
+- Useful a FTP-server (if the web-server is dedicated, as in the case of top-box, free)
 - To send emails, it may be necessary to install 'sendmail' (linux, windows, andoid) free.
         note: 'sendmail' is included on the Android server I use
-        ('Bit Web Server' by Andi UnpamTools, unfortunately no longer updated)
+        ('Bit Web Server' by Andi UnpamTools, unfortunately not longer updated)
         Use 'phpinfo' to get information on the installed php configuration.
 
 =======================
@@ -34,10 +34,10 @@ SW:
 1) verify correct operation of the FTP server (optional) for example with the client 'winSCP.exe' (free)
   Subsequent operations can all be done conveniently via FTP + winSCP.
 2) phpMyAdmin: (can be installed via FTP) check login username and password.
-3) Using phpMyAdmin create the 'bridge' DB by importing the bridge01.sql file
-4) Unzip bridge.zip and copy dir and files to www / bridge / dir (or as requested by the server).
+3) Using phpMyAdmin create the 'bridge' DB by importing the bridge.sql file
+4) Unzip bridge.zip and copy dir and files to www / bridge /    (or as requested by the server).
     WIFI URL: http: // <IP-WebServer> [: <local_port>] / bridge (web port default 80)
-    Internet URL: http: // <noip_domain> [: <AT_Nate_port>] / bridge
+    Internet URL: http: // <noip_domain> [: <AT_Nat_port>] / bridge
 
  Configuration:
 5) Access DB - 2 options: common_mysql.php (obsolete) and common_pdo.php
