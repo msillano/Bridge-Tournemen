@@ -4,6 +4,7 @@ Configurazioni:
 - I giocatori utilizzano i loro smartphone (PC, tablet) per accedere e vedere i risultati
     (modo guest).
 - Per programmare le partite, segnare i punti, etc. occorre una password (modo user).
+
   accesso Locale: via open WiFi (web-server on nelle ore d'uso)
   accesso globale via Internet: usare un router ed un servizio free di dynamic DNS, 
      ad esempio: https://www.noip.com/
@@ -14,8 +15,8 @@ Configurazioni:
  Precondizioni:
 HW:
  - web-server: Linux, Win, Android...
-   La soluzione più economica: un TV Top-box Android dedicato con schermo e tastiera USB 
-   solo in fase di installazione.
+   La soluzione più economica: un TV Top-box Android dedicato (con schermo e tastiera USB 
+   solo in fase di installazione).
    Io uso "MXQ 4K*2K 1080P Smart TV BOX XBMC/Kodi H.265 Android 4.4.2 Quad Core WiFi 8GB Mini PC"
    (29.78 €). Consumo AC: 20 W.
  - In LAN (anche WiFi) con un PC/portatile di sviluppo. Accesso ad Internet e Router richiesti
@@ -24,7 +25,7 @@ HW:
 SW:
 - Apache + php + Mysql ( WAMP, LAMP , Palapa etc. free), php ver. 5.5 +
 - PhpMyAdmin (installare una versione compatibile se non presente, free) 
-- Utile FTP-server (se il web-server è dedicato, come nel caso di top-box, free)
+- Utile un FTP-server (se il web-server è dedicato, come nel caso di top-box, free)
 - Per inviare le mail, può essere necessario installare 'sendmail' (linux, windows, andoid) free.
         nota: 'sendmail' è incluso nel server Android che uso
         ('Bit Web Server' by Andi UnpamTools, purtroppo non più aggiornato)
@@ -32,7 +33,7 @@ SW:
 
 =======================
  Installazione:
-1) verificare corretto funzionamnto del server FTP (opzionale) per esempio con il client 'winSCP.exe' (free)
+1) verificare il corretto funzionamnto del server FTP (opzionale) per esempio con il client 'winSCP.exe' (free)
   Le operazioni successive possono essere tutte fatte comodamente via FTP + winSCP. 
 2) phpMyAdmin: (può essere installato via FTP) controllare username e password di accesso. 
 3) Usando phpMyAdmin creare il DB 'bridge' importando il file bridge01.sql
